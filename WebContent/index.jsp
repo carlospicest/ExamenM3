@@ -29,7 +29,7 @@
 			</select>
 		</p>
 		<p>
-			<label>Mensaje:</label>
+			<label>MensajEe:</label>
 			<textarea name="msg" rows="4" cols="50"></textarea>
 		</p>
 	</form>
