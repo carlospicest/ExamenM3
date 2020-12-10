@@ -14,9 +14,10 @@ public class OperacionEmail {
 	 * en función de los parámetros que se le pasen a la función.
 	 * Esta función lee un archivo llamado email.properties que contiene el nombre de usuario y la
 	 * contraseña del correo que enviará el mensaje a un destinatario.
-	 * @param emailDestino
-	 * @param asuntoEmail
-	 * @param cuerpoEmail
+	 * 
+	 * @param emailDestino Destinatario del mensaje.
+	 * @param asuntoEmail Asunto del mensaje.
+	 * @param cuerpoEmail Texto del mensaje.
 	 * @return boolean (Devuelve true si el email ha sido enviado o false si no ha podido ser enviado).
 	 */
 	
@@ -52,7 +53,7 @@ public class OperacionEmail {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println("Resultado envio correo: " + enviarEmail("cpe17494@gmail.com", "Va o no va???", "Es solo una prueba"));
+		//System.out.println("Resultado envio correo: " + enviarEmail("cpe17494@gmail.com", "Va o no va???", "Es solo una prueba"));
 	}
 	
 }

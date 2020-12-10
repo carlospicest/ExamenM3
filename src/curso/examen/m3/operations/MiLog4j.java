@@ -36,6 +36,11 @@ public class MiLog4j {
 		
 	}
 	
+	/**
+	 * Agrega al archivo trazas.log una línea pasada por parámetros de tipo DEBUG.
+	 * @param msg Mensaje a mostrar en el archivo trazas.log
+	 */
+	
 	public static void debugMsg(String msg) {
 		
 		ClassLoader loader = Thread.currentThread().getContextClassLoader();

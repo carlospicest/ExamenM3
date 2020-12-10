@@ -20,7 +20,11 @@ import curso.examen.m3.operations.OperacionEmail;
 import curso.examen.m3.pojo.Contacto;
 
 /**
- * Servlet implementation class Controlador
+ * Controlador que en el método GET, redirige a la vista index.jsp y carga el select
+ * de provincias.
+ * 
+ * El método POST, envía un correo a un destinatario, almacena información en la base
+ * de datos y muestra al usuario el resultado de la operación.
  */
 @WebServlet("")
 public class Controlador extends HttpServlet {
@@ -71,16 +75,21 @@ public class Controlador extends HttpServlet {
 			p1.setEmailDestinatario(destinatarioEmail);
 			p1.setProvincia(provincia);
 			p1.setMensaje(mensaje);
-		
-			ContactoDAOImplMS.almacenarContacto(p1);
+			
+			try {
+				ContactoDAOImplMS.almacenarContacto(p1);
+			} catch(Exception e) {
+				System.out.println("El usuario no ha podido ser registrado en la base de datos.");
+				MiLog4j.debugMsg("El usuario no ha podido ser registrado en la base de datos.");
+			}
 			
 			MiLog4j.debugMsg("Enviado mensaje correctamente a " + destinatarioNombre + " con un email " + destinatarioEmail + ".");
 			
-			request.setAttribute("resultado", "El mensaje ha sido enviado correctamente.");
+			request.setAttribute("resultado", "<p><div class='alert alert-success'>El mensaje ha sido enviado correctamente.</div></p>");
 			
 		} else {
 			
-			request.setAttribute("resultado", "El mensaje no ha podido ser enviado.");
+			request.setAttribute("resultado", "<p><div class='alert alert-danger'>El mensaje no  ha podido ser enviado.</div></p>");
 		
 		}
 		

@@ -9,6 +9,12 @@ import curso.examen.m3.pojo.Contacto;
 
 public class ContactoDAOImplMS {
 	
+	/**
+	 * Almacena en la base de datos la información relativa a un contacto.
+	 * @param contacto (Objeto que contiene las propiedades)
+	 * @return Devuelve true si se ha conseguido almacenar o false si no.
+	 */
+	
 	public static boolean almacenarContacto(Contacto contacto) {
 		
 		boolean resultado = false;
@@ -40,15 +46,17 @@ public class ContactoDAOImplMS {
 		
 	}
 	
+	
+	
 	public static void main(String[] args) {
 		
-		Contacto c1 = new Contacto();
+		/*Contacto c1 = new Contacto();
 		c1.setNombreDestinatario("Carlos Picado");
 		c1.setEmailDestinatario("cpe17494@gmail.com");
 		c1.setProvincia("Zamora");
 		c1.setMensaje("Probando funcionalidad.");
 		
-		System.out.println(almacenarContacto(c1));
+		System.out.println(almacenarContacto(c1));*/
 		
 	}
 	
